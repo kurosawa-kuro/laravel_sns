@@ -3,9 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
-class AlbumFactory extends Factory
+class ImageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,10 +14,7 @@ class AlbumFactory extends Factory
     public function definition()
     {
         return [
-            'category_id' => 1,
-            'user_id' => 1,
-            'name' => $this->faker->name(),
-            'description' => $this->faker->name(),
+            'album_id' => 1,
             'image' => 'https://i.pravatar.cc/300',
         ];
     }

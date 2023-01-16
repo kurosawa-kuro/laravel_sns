@@ -1,16 +1,19 @@
 <?php
 
-use App\Models\User;
+
+use App\Models\Album;
+use Database\Seeders\UserSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class AlbumTest extends TestCase
 {
-//    use RefreshDatabase;
+    use RefreshDatabase;
 
     private function testSeeder()
     {
         $this->seed(UserSeeder::class);
+        $this->seed(AlbumSeeder::class);
     }
 
     /**
@@ -21,8 +24,8 @@ class ExampleTest extends TestCase
     public function test_user_create()
     {
         $this->testSeeder();
-        dd(User::get()->toArray());
-
+        dd(Album::with('user')->get()->toArray());
         $this->assertTrue(true);
+
     }
 }
