@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Album;
 use App\Models\Category;
 use App\Models\Follower;
 use App\Models\Image;
@@ -13,6 +14,12 @@ class CategoryTest extends TestCase
 
     private function testSeeder()
     {
+        User::truncate();
+        Album::truncate();
+        Image::truncate();
+        Follower::truncate();
+        Category::truncate();
+
         $this->seed(UserSeeder::class);
         $this->seed(AlbumSeeder::class);
         $this->seed(ImageSeeder::class);

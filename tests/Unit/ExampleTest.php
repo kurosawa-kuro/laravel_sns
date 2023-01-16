@@ -10,6 +10,7 @@ class ExampleTest extends TestCase
 
     private function testSeeder()
     {
+        User::truncate();
         $this->seed(UserSeeder::class);
     }
 
